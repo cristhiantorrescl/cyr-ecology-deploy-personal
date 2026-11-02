@@ -17,9 +17,12 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://cyr-ecology-fullstack-personal.vercel.app",
+      "https://cyr-ecology-deploy-personal.vercel.app", // 👈 NUEVA URL AGREGADA
       "http://localhost:5173",
+      "http://localhost:3000",
     ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // 👈 AGREGADO
+    allowedHeaders: ["Content-Type", "Authorization"], // 👈 AGREGADO
     credentials: true,
   }),
 );
