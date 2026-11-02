@@ -11,8 +11,8 @@ const DocumentoPDF = ({
   descuento = 0,
   igv = 0,
   total = 0,
-  logoUrl = null,
-  firmaUrl = null,
+  logoUrl="/logo.jpeg"
+  firmaUrl="/firma.jpeg"
 }) => {
   return (
     <div
