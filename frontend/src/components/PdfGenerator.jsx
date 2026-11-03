@@ -69,8 +69,8 @@ const PdfGenerator = ({ cotizacion, autoDownload = false }) => {
             }
             igv={cotizacion.igv}
             total={cotizacion.total}
-            logoUrl={null}
-            firmaUrl={null}
+            logoUrl="/logo.jpeg"
+            firmaUrl="/firma.jpeg"
           />
         </div>
       </div>
