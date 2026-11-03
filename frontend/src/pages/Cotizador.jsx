@@ -22,6 +22,13 @@ const UNITS = [
   "PQTE",
 ];
 
+const getLocalTime = () => {
+  const d = new Date();
+  const hours = String(d.getHours()).padStart(2, "0");
+  const minutes = String(d.getMinutes()).padStart(2, "0");
+  return `${hours}:${minutes}`;
+};
+
 const Cotizador = () => {
   // Función para obtener la fecha local en formato YYYY-MM-DD (evita el desfase de UTC)
   const getLocalDate = () => {
@@ -31,15 +38,9 @@ const Cotizador = () => {
     const day = String(d.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
-
   const [quoteNumber, setQuoteNumber] = useState("");
   const [date, setDate] = useState(getLocalDate()); // <-- FECHA LOCAL CORREGIDA
-  const [time, setTime] = useState(
-    new Date().toLocaleTimeString("es-PE", {
-      hour: "2-digit",
-      minute: "2-digit",
-    }),
-  ); // <-- NUEVO ESTADO DE HORA
+  const [time, setTime] = useState(getLocalTime);
   const [currency, setCurrency] = useState("S/");
   const [discount, setDiscount] = useState(0);
   const [includeIgv, setIncludeIgv] = useState(true);
